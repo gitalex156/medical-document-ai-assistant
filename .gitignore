@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+
+data/*.jsonl
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+*.before_*.py
+*.broken*.py
+*.backup.py
+*.etalon_*.py
+
+# Local reference / generated files
+*.etalon.py
+*.backup
+*.backup.py
+init_project.py
