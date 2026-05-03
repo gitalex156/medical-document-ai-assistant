@@ -8,6 +8,30 @@ AI-сервис для информационного разбора медиц�
 
 ---
 
+## Screenshots
+
+### Main interface
+
+![Main interface](docs/screenshots/main-page.png)
+
+### Support form
+
+![Support form](docs/screenshots/support-modal.png)
+
+### Analysis result with attention points
+
+![Analysis result with warnings](docs/screenshots/analysis-result-warning.png)
+
+### Analysis result for a complete document
+
+![Analysis result complete](docs/screenshots/analysis-result-complete.png)
+
+### Admin dashboard
+
+![Admin dashboard](docs/screenshots/admin-dashboard.png)
+
+---
+
 ## Что делает проект
 
 Пользователь вставляет текст медицинского документа, например заключение врача.  
