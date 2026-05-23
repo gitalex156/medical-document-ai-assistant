@@ -8,7 +8,7 @@ Built with:
 
 ---
 
-# Overview
+## Overview
 
 Medical Document AI Assistant is an applied AI/LLM project focused on medical document understanding and structured AI analysis.
 
