@@ -1,342 +1,230 @@
-# 🩺 Medical Document AI Assistant
+# Medical Document AI Assistant
 
-AI-сервис для информационного разбора медицинских документов.
+Production-style AI assistant for medical document analysis, structured review, and AI-powered healthcare workflows.
 
-Проект помогает пользователю простым языком понять медицинский документ, проверить его полноту, увидеть недостающие разделы и подготовить вопросы для обсуждения с врачом.
+Built with:
 
-> Сервис не ставит диагноз, не назначает и не отменяет лечение и не заменяет консультацию медицинского специалиста.
-
----
-
-## Screenshots
-
-### Main interface
-
-![Main interface](docs/screenshots/main-page.png)
-
-### Support form
-
-![Support form](docs/screenshots/support-modal.png)
-
-### Analysis result with attention points
-
-![Analysis result with warnings](docs/screenshots/analysis-result-warning.png)
-
-### Analysis result for a complete document
-
-![Analysis result complete](docs/screenshots/analysis-result-complete.png)
-
-### Admin dashboard
-
-![Admin dashboard](docs/screenshots/admin-dashboard.png)
+**Python • FastAPI • Streamlit • Ollama • RAG • ChromaDB • Docker**
 
 ---
 
-## Что делает проект
+# Overview
 
-Пользователь вставляет текст медицинского документа, например заключение врача.  
-Система анализирует документ и показывает:
+Medical Document AI Assistant is an applied AI/LLM project focused on medical document understanding and structured AI analysis.
 
-- полноту документа;
-- недостающие разделы;
-- что требует внимания;
-- краткое объяснение документа;
-- что можно уточнить у врача;
-- чек-лист полноты документа;
-- технический JSON-ответ для разработчиков.
+The system combines:
 
----
-
-## Почему это важно
-
-Медицинские документы часто написаны сложным языком.  
-Пользователю бывает трудно понять:
-
-- какие разделы в документе есть;
-- каких сведений не хватает;
-- что стоит уточнить у врача;
-- какие вопросы подготовить к следующему приёму.
-
-Этот проект решает именно эту задачу: помогает разобраться в документе и подготовиться к разговору со специалистом.
+* LLM-powered medical document review
+* RAG-based retrieval over medical guidelines
+* structured JSON output
+* FastAPI backend
+* Streamlit UI
+* local LLM support via Ollama
+* analytics and support workflows
+* production-oriented architecture
 
 ---
 
-## Безопасное позиционирование
+# Main Interface
 
-Проект специально не позиционируется как:
-
-- AI-врач;
-- диагностическая система;
-- сервис назначения лечения;
-- медицинская консультация;
-- замена врачу.
-
-Вместо этого сервис работает как:
-
-> информационный AI-помощник для разбора медицинского документа и подготовки вопросов врачу.
+![Main UI](docs/screenshots/main-page.png)
 
 ---
 
-## Основной функционал
+# AI Analysis Result
 
-### Пользовательский интерфейс
-
-- medtech-style Streamlit UI;
-- поле ввода медицинского документа;
-- индикатор состояния “AI разбирает документ”;
-- структурированный результат анализа;
-- блок поддержки;
-- безопасные дисклеймеры.
-
-### Backend
-
-- FastAPI endpoint для анализа документа;
-- структурированный JSON-ответ;
-- rule-based validation;
-- расчёт оценки полноты;
-- RAG-style retrieval по чек-листу;
-- локальная LLM через Ollama.
-
-### AI / LLM
-
-- локальный запуск модели через Ollama;
-- отсутствие внешнего API-ключа в базовой версии;
-- постобработка AI-ответов;
-- фильтрация небезопасных медицинских советов;
-- удаление случайных английских слов из русскоязычного ответа;
-- запрет на назначения лечения, дозировки и диагнозы.
-
-### Admin dashboard
-
-Отдельная админ-панель показывает:
-
-- количество проверок;
-- проверки за сегодня;
-- среднюю оценку полноты;
-- среднее количество рисков;
-- обращения в поддержку;
-- частые замечания;
-- последние проверки;
-- технические события.
+![Analysis Result](docs/screenshots/analysis-result-complete.png)
 
 ---
 
-## Архитектура
+# Warning Analysis Result
+
+![Warning Result](docs/screenshots/analysis-result-warning.png)
+
+---
+
+# Support Modal
+
+![Support Modal](docs/screenshots/support-modal.png)
+
+---
+
+# Admin Dashboard
+
+![Admin Dashboard](docs/screenshots/admin-dashboard.png)
+
+---
+
+# Features
+
+## AI Medical Analysis
+
+* Medical document understanding
+* AI-generated summaries
+* Missing section detection
+* Risk highlighting
+* Recommendations and follow-up suggestions
+* Confidence scoring
+
+## RAG Pipeline
+
+* Retrieval over medical guideline documents
+* Context grounding for safer outputs
+* Vector-based retrieval architecture
+
+## Backend
+
+* FastAPI REST API
+* Pydantic validation
+* Structured JSON responses
+* Modular architecture
+
+## UI
+
+* Streamlit-based interface
+* Analytics dashboard
+* Support workflow
+* Review history
+
+## Local LLM Support
+
+* Ollama integration
+* Local inference support
+* Privacy-oriented architecture
+
+---
+
+# Architecture
 
 ```text
-User
-  ↓
+User Input
+    ↓
 Streamlit UI
-  ↓
-FastAPI backend
-  ↓
-Validation tools
-  ↓
-RAG checklist retrieval
-  ↓
-Local LLM via Ollama
-  ↓
-Safety post-processing
-  ↓
-Structured result
+    ↓
+FastAPI Backend
+    ↓
+AI Agent
+    ↓
+RAG Retriever
+    ↓
+Ollama / LLM
+    ↓
+Structured JSON Output
 ```
 
 ---
 
-## Структура проекта
+# Tech Stack
+
+| Category   | Technologies    |
+| ---------- | --------------- |
+| Backend    | FastAPI, Python |
+| Frontend   | Streamlit       |
+| LLM        | Ollama          |
+| Retrieval  | RAG, ChromaDB   |
+| Validation | Pydantic        |
+| Testing    | pytest          |
+| Deployment | Docker          |
+
+---
+
+# Project Structure
 
 ```text
-medical-report-ai-reviewer/
+medical-document-ai-assistant/
+│
 ├── app/
-│   ├── main.py
 │   ├── agent.py
-│   ├── tools.py
-│   ├── rag.py
+│   ├── config.py
 │   ├── llm.py
+│   ├── main.py
+│   ├── prompts.py
+│   ├── rag.py
 │   ├── schemas.py
-│   └── config.py
+│   └── tools.py
 │
 ├── data/
-│   └── guidelines.md
+│   ├── guidelines.md
+│   ├── examples.jsonl
+│   ├── review_history.jsonl
+│   └── analytics_events.jsonl
 │
-├── streamlit_app.py
+├── docs/
+│   └── screenshots/
+│
+├── notebooks/
+│   └── evaluation.ipynb
+│
+├── tests/
+│   ├── test_agent.py
+│   └── test_api.py
+│
 ├── admin_dashboard.py
+├── streamlit_app.py
+├── docker-compose.yml
+├── Dockerfile
 ├── requirements.txt
-├── .env.example
-├── .gitignore
 └── README.md
 ```
 
 ---
 
-## Запуск проекта
+# Quick Start
 
-### 1. Установить зависимости
+## Clone Repository
+
+```bash
+git clone https://github.com/gitalex156/medical-document-ai-assistant.git
+cd medical-document-ai-assistant
+```
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Запустить Ollama
-
-Установить Ollama:
-
-```text
-https://ollama.com
-```
-
-Скачать модель:
-
-```bash
-ollama pull llama3.2:3b
-```
-
-Запустить Ollama:
-
-```bash
-ollama serve
-```
-
-### 3. Запустить backend
+## Run Backend
 
 ```bash
 python3 -m uvicorn app.main:app --reload
 ```
 
-Swagger UI:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-### 4. Запустить основной интерфейс
+## Run Streamlit UI
 
 ```bash
-python3 -m streamlit run streamlit_app.py --server.port 8501
+python3 -m streamlit run streamlit_app.py
 ```
 
-Открыть:
-
-```text
-http://localhost:8501
-```
-
-### 5. Запустить админ-панель
+## Run Admin Dashboard
 
 ```bash
 python3 -m streamlit run admin_dashboard.py --server.port 8502
 ```
 
-Открыть:
+---
 
-```text
-http://localhost:8502
+# Docker
+
+```bash
+docker compose up --build
 ```
 
 ---
 
-## Пример входного текста
+# Potential Use Cases
 
-```text
-Пациент жалуется на головную боль. Анамнез без особенностей.
-Диагноз: головная боль напряжения. Назначено лечение.
-Рекомендации: отдых, контроль состояния.
-```
-
----
-
-## Пример результата
-
-Сервис может показать:
-
-- полнота документа: `0.77`;
-- недостающие разделы: `Объективный осмотр`;
-- что требует внимания:
-  - не указаны противопоказания;
-  - не указана информация об аллергиях;
-  - документ слишком короткий;
-- что уточнить у врача:
-  - нужно ли добавить объективный осмотр;
-  - есть ли противопоказания;
-  - есть ли сведения об аллергиях.
+* Medical document review
+* Patient-facing AI assistants
+* Clinical workflow support
+* Medical QA automation
+* AI-powered healthcare interfaces
+* MedTech MVP development
 
 ---
 
-## Безопасность вывода
+# Disclaimer
 
-В проект добавлен слой постобработки AI-ответов.
+This project is intended for educational and demonstration purposes only.
 
-Он помогает:
-
-- убрать случайные английские слова;
-- не показывать лечебные назначения;
-- не показывать дозировки препаратов;
-- не выдавать диагнозы;
-- переводить небезопасные советы в вопросы для врача;
-- удерживать результат в формате информационного разбора документа.
-
----
-
-## Локальные данные
-
-Проект может создавать локальные файлы:
-
-```text
-data/analytics_events.jsonl
-data/support_messages.jsonl
-```
-
-Они используются для админ-панели и не должны попадать в GitHub.
-
----
-
-## Ограничения
-
-Это demo / portfolio project.
-
-Сервис:
-
-- не является медицинской консультацией;
-- не ставит диагноз;
-- не назначает лечение;
-- не отменяет лечение;
-- не заменяет врача;
-- не предназначен для экстренных ситуаций.
-
-Все выводы должны обсуждаться с квалифицированным медицинским специалистом.
-
----
-
-## Возможные улучшения
-
-- авторизация пользователей;
-- база данных вместо JSONL;
-- экспорт результата в PDF;
-- Docker / docker-compose;
-- деплой;
-- расширенный RAG с векторной базой;
-- загрузка PDF/файлов;
-- история проверок пользователя;
-- врач в контуре проверки;
-- Telegram/e-mail уведомления поддержки;
-- evaluation dataset для проверки качества LLM-ответов.
-
----
-
-## Tech stack
-
-- Python
-- FastAPI
-- Streamlit
-- Pydantic
-- Ollama
-- Local LLM
-- RAG-style retrieval
-- JSONL logging
-
----
-
-## Author
-
-AI / ML Engineer  
-Applied AI · LLM/RAG systems · FastAPI · Streamlit · Local LLM inference
+It does not provide medical diagnosis or treatment recommendations and is not a substitute for professional medical advice.
