@@ -2,6 +2,13 @@
 
 Production-style AI assistant for medical document analysis, structured review, and AI-powered healthcare workflows.
 
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-API-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-UI-red)
+![Docker](https://img.shields.io/badge/Docker-ready-blue)
+![RAG](https://img.shields.io/badge/RAG-enabled-purple)
+![Ollama](https://img.shields.io/badge/Ollama-local%20LLM-black)
+
 Built with:
 
 **Python • FastAPI • Streamlit • Ollama • RAG • ChromaDB • Docker**
@@ -22,6 +29,8 @@ The system combines:
 * local LLM support via Ollama
 * analytics and support workflows
 * production-oriented architecture
+
+The project demonstrates modern AI engineering workflows and product-oriented AI system design.
 
 ---
 
@@ -65,12 +74,18 @@ The system combines:
 * Risk highlighting
 * Recommendations and follow-up suggestions
 * Confidence scoring
+* Structured AI output
+
+---
 
 ## RAG Pipeline
 
 * Retrieval over medical guideline documents
 * Context grounding for safer outputs
 * Vector-based retrieval architecture
+* Semantic search support
+
+---
 
 ## Backend
 
@@ -78,13 +93,20 @@ The system combines:
 * Pydantic validation
 * Structured JSON responses
 * Modular architecture
+* Production-oriented project structure
 
-## UI
+---
+
+## UI & Workflow
 
 * Streamlit-based interface
 * Analytics dashboard
 * Support workflow
 * Review history
+* Admin dashboard
+* Interactive medical review flow
+
+---
 
 ## Local LLM Support
 
@@ -110,21 +132,23 @@ RAG Retriever
 Ollama / LLM
     ↓
 Structured JSON Output
+    ↓
+Analytics & Review History
 ```
 
 ---
 
 # Tech Stack
 
-| Category   | Technologies    |
-| ---------- | --------------- |
-| Backend    | FastAPI, Python |
-| Frontend   | Streamlit       |
-| LLM        | Ollama          |
-| Retrieval  | RAG, ChromaDB   |
-| Validation | Pydantic        |
-| Testing    | pytest          |
-| Deployment | Docker          |
+| Category   | Technologies           |
+| ---------- | ---------------------- |
+| Backend    | FastAPI, Python        |
+| Frontend   | Streamlit              |
+| LLM        | Ollama                 |
+| Retrieval  | RAG, ChromaDB          |
+| Validation | Pydantic               |
+| Testing    | pytest                 |
+| Deployment | Docker, Docker Compose |
 
 ---
 
@@ -147,7 +171,8 @@ medical-document-ai-assistant/
 │   ├── guidelines.md
 │   ├── examples.jsonl
 │   ├── review_history.jsonl
-│   └── analytics_events.jsonl
+│   ├── analytics_events.jsonl
+│   └── support_messages.jsonl
 │
 ├── docs/
 │   └── screenshots/
@@ -178,11 +203,15 @@ git clone https://github.com/gitalex156/medical-document-ai-assistant.git
 cd medical-document-ai-assistant
 ```
 
+---
+
 ## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
+
+---
 
 ## Run Backend
 
@@ -190,11 +219,15 @@ pip install -r requirements.txt
 python3 -m uvicorn app.main:app --reload
 ```
 
+---
+
 ## Run Streamlit UI
 
 ```bash
 python3 -m streamlit run streamlit_app.py
 ```
+
+---
 
 ## Run Admin Dashboard
 
@@ -204,7 +237,7 @@ python3 -m streamlit run admin_dashboard.py --server.port 8502
 
 ---
 
-# Docker
+## Docker
 
 ```bash
 docker compose up --build
@@ -220,6 +253,34 @@ docker compose up --build
 * Medical QA automation
 * AI-powered healthcare interfaces
 * MedTech MVP development
+
+---
+
+# Portfolio Positioning
+
+This project demonstrates:
+
+* Applied AI engineering
+* LLM integration
+* RAG pipelines
+* AI system architecture
+* FastAPI backend development
+* Streamlit UI workflows
+* Local LLM deployment
+* Product-oriented AI thinking
+
+---
+
+# Future Improvements
+
+* LangGraph orchestration
+* Authentication system
+* Role-based admin access
+* Cloud deployment
+* Real-time analytics
+* Advanced evaluation pipeline
+* Audit logging
+* Multi-model support
 
 ---
 
