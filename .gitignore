@@ -21,3 +21,4 @@ data/*.sqlite3
 *.backup.py
 init_project.py
 archive/
+docs/demo/*.mov

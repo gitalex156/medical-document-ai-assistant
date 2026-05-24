@@ -34,6 +34,12 @@ The project demonstrates modern AI engineering workflows and product-oriented AI
 
 ---
 
+# Demo
+
+![Demo](docs/demo/demo.gif)
+
+---
+
 # Main Interface
 
 ![Main UI](docs/screenshots/main-page.png)
@@ -118,7 +124,7 @@ The project demonstrates modern AI engineering workflows and product-oriented AI
 
 # Architecture
 
-```text
+```text id="rq2mjk"
 User Input
     ↓
 Streamlit UI
@@ -154,7 +160,7 @@ Analytics & Review History
 
 # Project Structure
 
-```text
+```text id="uzy4a6"
 medical-document-ai-assistant/
 │
 ├── app/
@@ -175,6 +181,10 @@ medical-document-ai-assistant/
 │   └── support_messages.jsonl
 │
 ├── docs/
+│   ├── demo/
+│   │   ├── demo.gif
+│   │   └── medical-ai-demo.mov
+│   │
 │   └── screenshots/
 │
 ├── notebooks/
@@ -198,7 +208,7 @@ medical-document-ai-assistant/
 
 ## Clone Repository
 
-```bash
+```bash id="ivvv9j"
 git clone https://github.com/gitalex156/medical-document-ai-assistant.git
 cd medical-document-ai-assistant
 ```
@@ -207,7 +217,7 @@ cd medical-document-ai-assistant
 
 ## Install Dependencies
 
-```bash
+```bash id="wk6m2g"
 pip install -r requirements.txt
 ```
 
@@ -215,7 +225,7 @@ pip install -r requirements.txt
 
 ## Run Backend
 
-```bash
+```bash id="l86b0j"
 python3 -m uvicorn app.main:app --reload
 ```
 
@@ -223,7 +233,7 @@ python3 -m uvicorn app.main:app --reload
 
 ## Run Streamlit UI
 
-```bash
+```bash id="4j1nm7"
 python3 -m streamlit run streamlit_app.py
 ```
 
@@ -231,7 +241,7 @@ python3 -m streamlit run streamlit_app.py
 
 ## Run Admin Dashboard
 
-```bash
+```bash id="df5xgb"
 python3 -m streamlit run admin_dashboard.py --server.port 8502
 ```
 
@@ -239,7 +249,7 @@ python3 -m streamlit run admin_dashboard.py --server.port 8502
 
 ## Docker
 
-```bash
+```bash id="7a6lnr"
 docker compose up --build
 ```
 
